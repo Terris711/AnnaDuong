@@ -7,8 +7,31 @@ import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
+    
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+    
+        formData.append("access_key", "3a190d7f-f6ad-4798-bf7a-12ec37c1245a");
+    
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+    
+        const data = await response.json();
+    
+        if (data.success) {
+          alert(data.message);  
+          event.target.reset();
+        } else {
+          console.log("Error", data);
+        }
+    };
+
+
     return (
-        <div className='contact'>
+        <div id='contact' className='contact'>
             <div className="contact-title">
                 <h1>Get in touch</h1>
                 <img src={theme_pattern} alt="" />
@@ -17,7 +40,7 @@ const Contact = () => {
             <div className="contact-section">
                 <div className="contact-left">
                     <h1>Let's talk</h1>
-                    <p>I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
+                    <p>I'm currently looking for junior position or graduate program, so feel free to send me a message if you are intersted with my profile. You can contact anytime.</p>
                     <div className="contact-details">
                         <div className="contact-detail">
                             <img src={mail_icon} alt="" /> <p>vananhduong.vn@gmail.com</p>
@@ -32,7 +55,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <form className="contact-right">
+                <form onSubmit={onSubmit} className="contact-right">
                     <label htmlFor="">Your Name</label>
                     <input type="text" placeholder='Enter your name' name='name' />
                     <label htmlFor="">Your Email</label>
@@ -47,3 +70,5 @@ const Contact = () => {
 }
 
 export default Contact
+
+// 3a190d7f-f6ad-4798-bf7a-12ec37c1245a

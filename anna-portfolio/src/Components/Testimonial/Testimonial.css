@@ -1,0 +1,110 @@
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+.testimonial-title {
+    position: relative;
+}
+
+.testimonial-title h1 {
+    padding: 0px 30px;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.testimonial-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.testimonial-container {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-container blockquote {
+    margin: 0;
+    padding: 0;
+    border-left: 5px solid #ccc;
+    padding-left: 1rem;
+    font-style: italic;
+    color: white;
+}
+
+.testimonial-container blockquote p {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-family: Outfit;
+}
+
+.testimonial-container blockquote footer {
+    text-align: right;
+    font-weight: bold;
+    background: linear-gradient(270deg, #DF8909 80%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skill-overlay {
+    position: absolute !important,
+        top: 0 !important,
+        left: 0 !important,
+        width: 100% !important,
+        height: 100% !important,
+        display: flex !important,
+        align-items: center !important,
+        justify-content: center !important,
+        background-color: rgba(0, 0, 0, 0.5) !important,
+        opacity: 0 !important,
+        transition: opacity 0.3s !important,
+        background-color 0.3s !important,
+        color: white !important,
+        font-size: 1.5rem !important,
+        font-weight: bold !important,
+        text-align: center !important,
+        padding: 20px !important,
+        border-radius: 50px !important,
+}
+
+.skill-overlay span {
+    opacity: 0 !important;
+    transition: opacity 0.3s !important;
+}
+
+.work-item:hover .skill-overlay {
+    opacity: 1 !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.work-item:hover .skill-overlay span {
+    opacity: 1 !important;
+}
+
+@media (max-width) {
+
+    .testimonials {
+        gap: 50px;
+        margin: 50px 70px;
+        align-items: start;
+    }
+
+    .testimonial-title h1 {
+        padding: 0;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .testimonial-title img {
+        width: 130px;
+        margin-right: -20px;
+    }
+}

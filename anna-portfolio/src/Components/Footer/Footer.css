@@ -69,3 +69,22 @@
     transform: scale(1.1);
     transition: 1.1s;
 }
+
+.fotter-bottom-left {
+    margin-bottom: 50px !important;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin: 50px 70px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .fotter-bottom-left {
+        margin-bottom: 20px;
+    }
+}
